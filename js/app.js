@@ -20,6 +20,7 @@ App.addInitializer(function (options) {
 		console.error('Couldn\'t start app: ', e, e.stack);
 	}
 
+	/* Would normally post this info to the backend to add to an error log */
 	window.onerror = function (message, url, lineNumber, column, errorObj) {
 	    console.error('Error: ' + message + ' Script: ' + url + ' Line: ' + lineNumber + ' Column: ' + column + ' StackTrace: ' +  errorObj);
 	}
