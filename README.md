@@ -1,6 +1,9 @@
 # Google Calendar Example
 ![Screenshot](http://i.imgur.com/rPyBJEh.png)
 
+### Made with
+[BackboneJS](https://github.com/jashkenas/backbone/) + [MarionetteJS](https://github.com/marionettejs/backbone.marionette)
+
 ### About me
 ```
 function Jimmy(life){
