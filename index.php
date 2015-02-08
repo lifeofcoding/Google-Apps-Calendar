@@ -15,7 +15,7 @@ include('includes/bootstrap.php');
 	<title>Mobiquity Calendar Example</title>
 	<link rel="stylesheet" type="text/css" href="/css/fonts.css">
 	<link rel="stylesheet" type="text/css" href="/css/app.css">
-	<link rel="stylesheet" type="text/css" href="/libs/fullcalendar.css">
+	<link rel="stylesheet" type="text/css" href="/css/fullcalendar.css">
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/css/bootstrap-datetimepicker.min.css">
