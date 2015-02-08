@@ -74,7 +74,7 @@
 			});
 		},
 
-		/* Displays the modal window all accepts a date to move fullcalendar to */
+		/* Displays the modal window and accepts a date to move fullcalendar to */
 		jumpToDate: function(){
 			var modal = $('#jumpToDate'),
 			    dataPicker = $('#datetimepicker');
@@ -105,7 +105,7 @@
 
 		/**
 		  * @desc creates new Google Calendar event
-		  * @param object params - event params for form
+		  * @param object params - event params from form
 		*/
 		createNewEvent: function(params){
 			if(!params || typeof params !== 'object'){
@@ -141,7 +141,7 @@
 
 		/**
 		  * @desc updates a Google Calendar event with new details
-		  * @param object params - event params for form
+		  * @param object params - event params from form
 		  * @param string eventId - the event's google ID
 		*/
 		updateEvent: function(params, eventId){
@@ -178,6 +178,11 @@
 			} 
 		},
 
+
+		/**
+		  * @desc processes all Google requests
+		  * @param object request - the rquest object created by Google API
+		*/
 		processGoogleRequest: function(request){
 			var _this = this;
 			if(!request || typeof request !== 'object'){
