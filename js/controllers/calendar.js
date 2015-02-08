@@ -111,7 +111,7 @@
 				console.warn('Tried to create an event without passing a valid params object!');
 			}else{
 				var _this = this,		
-				    resource = {
+				    event = {
 					"summary": params.title,
 					"location": params.location,
 					"start": {
@@ -128,11 +128,12 @@
 				if(App.googleLoggedIn){
 					var request = gapi.client.calendar.events.insert({
 						'calendarId': 'primary',
-						'resource': resource
+						'resource': event
 					});
 					_this.processGoogleRequest(request, params.start);
 				}else{
-					App.Model.Events.add(resource);
+					event.id = App.Model.Events.models.length + 1; //need an id for this temp event
+					App.Model.Events.add(event);
 					_this.renderCalendar();
 					App.Calendar.fullCalendar( 'gotoDate', moment(params.start)._d);
 				}
@@ -149,7 +150,7 @@
 				console.warn('Tried to updating an event without passing a valid params and/or eventID!');
 			}else{
 				var _this = this,
-				    resource = {
+				    event = {
 					"summary": params.title,
 					"location": params.location,
 					"start": {
@@ -167,12 +168,12 @@
 					var request = gapi.client.calendar.events.update({
 						'eventId': eventId,
 						'calendarId': 'primary',
-						'resource': resource
+						'resource': event
 					});
 					_this.processGoogleRequest(request, params.start);
 				}else{
 					var model = App.Model.Events.findWhere({id:eventId});
-					model.set(resource);
+					model.set(event);
 					_this.renderCalendar();
 					App.Calendar.fullCalendar( 'gotoDate', moment(params.start)._d);
 				}
