@@ -1,5 +1,5 @@
 <?php
-
+$cacheNumber = filemtime(lastModifiedInFolder('./js')); //set to last file modified date of assets to force re-cache
 //Added to scan each js asset and find the last modified
 function lastModifiedInFolder($folderPath) {
     /* First we set up the iterator */
