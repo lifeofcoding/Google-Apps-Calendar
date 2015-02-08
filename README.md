@@ -2,7 +2,7 @@
 ![Screenshot](http://i.imgur.com/rPyBJEh.png)
 
 ### Made with
-[BackboneJS](https://github.com/jashkenas/backbone/) + [MarionetteJS](https://github.com/marionettejs/backbone.marionette)
+[BackboneJS](https://github.com/jashkenas/backbone/) + [MarionetteJS](https://github.com/marionettejs/backbone.marionette) + [FullCalendar](http://fullcalendar.io/)
 
 ### About me
 ```
