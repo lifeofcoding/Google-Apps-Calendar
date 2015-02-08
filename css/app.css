@@ -1,0 +1,46 @@
+#content {
+  margin-top: 45px;
+  text-align: center;
+}
+#content #calendar-wrapper {
+  padding: 25px;
+  text-align: center;
+}
+#content #calendar-wrapper .fc-today {
+  background: #D7E2E8 !important;
+}
+
+.navbar {
+  top: 0;
+  position: fixed !important;
+  width: 100%;
+  z-index: 999;
+}
+
+.modal-backdrop {
+  position: fixed !important;
+}
+
+#googleLogin {
+  margin-top: 25px;
+}
+
+.icon-google {
+  font-size: 18px;
+  margin-top: 2px;
+  position: relative;
+  display: inline-block;
+}
+
+.button-text {
+  top: -3px;
+  display: inline-block;
+  position: relative;
+}
+
+#googleLogin {
+  margin-left: 20px;
+  margin-top: 22px;
+  margin-right: 23px;
+}
+
