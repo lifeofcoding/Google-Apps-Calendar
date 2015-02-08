@@ -47,7 +47,6 @@
 						request.execute(function(resp) {
 							/* Add the google calendar events to our events collection (App.Model.Events) */
 							for (var i = 0; i < resp.items.length; i++) {
-								console.log(resp.items[i]);
 								App.Model.Events.add(resp.items[i]);
 							}
 							//Render the calendar with the new events

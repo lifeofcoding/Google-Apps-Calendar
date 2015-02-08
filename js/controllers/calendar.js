@@ -19,7 +19,6 @@
 
 			request.execute(function(resp) {
 				for (var i = 0; i < resp.items.length; i++) {
-					console.log(resp.items[i]);
 					App.Model.Events.add(resp.items[i]);
 				}
 
