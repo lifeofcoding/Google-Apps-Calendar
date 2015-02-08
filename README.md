@@ -1,4 +1,4 @@
-# Google Apps Calendar Example
+# Google Calendar Example
 ![Screenshot](http://i.imgur.com/rPyBJEh.png)
 
 ### About me
