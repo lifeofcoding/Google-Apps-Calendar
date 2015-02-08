@@ -19,4 +19,8 @@ App.addInitializer(function (options) {
 	} catch(e) {
 		console.error('Couldn\'t start app: ', e, e.stack);
 	}
+
+	window.onerror = function (message, url, lineNumber, column, errorObj) {
+	    console.error('Error: ' + message + ' Script: ' + url + ' Line: ' + lineNumber + ' Column: ' + column + ' StackTrace: ' +  errorObj);
+	}
 });
