@@ -131,10 +131,11 @@
 						'calendarId': 'primary',
 						'resource': resource
 					});
-					_this.processGoogleRequest(request);
+					_this.processGoogleRequest(request, params.start);
 				}else{
 					App.Model.Events.add(resource);
 					_this.renderCalendar();
+					App.Calendar.fullCalendar( 'gotoDate', moment(params.start)._d);
 				}
 			}
 		},
@@ -169,21 +170,23 @@
 						'calendarId': 'primary',
 						'resource': resource
 					});
-					_this.processGoogleRequest(request);
+					_this.processGoogleRequest(request, params.start);
 				}else{
 					var model = App.Model.Events.findWhere({id:eventId});
 					model.set(resource);
 					_this.renderCalendar();
+					App.Calendar.fullCalendar( 'gotoDate', moment(params.start)._d);
 				}
 			} 
 		},
 
 
 		/**
-		  * @desc processes all Google requests
+		  * @desc processes insert/update Google requests
 		  * @param object request - the rquest object created by Google API
+		  * @param string date - pass the date for the calendar to switch to
 		*/
-		processGoogleRequest: function(request){
+		processGoogleRequest: function(request, date){
 			var _this = this;
 			if(!request || typeof request !== 'object'){
 				console.warn('Tried processing a google request but request variable is not valid!');
@@ -194,6 +197,9 @@
 						App.vent.trigger('error', resp.error.message);
 					}else{
 						_this.refreshCalendar();
+						setTimeout(function(){
+							App.Calendar.fullCalendar( 'gotoDate', moment(date)._d);
+						}, 1000);
 					}
 				});
 			}
