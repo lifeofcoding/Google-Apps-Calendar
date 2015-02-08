@@ -19,13 +19,7 @@
 			window.loginCallback = this.options.loginCallback; //added to global for google's api login event
 		},
 
-		/* logout - not implmented yet */
-		logout: function() {
-			gapi.auth.signOut();
-			location.reload();
-		},
-
-		/* loin event called when user clicks the login to google button */
+		/* login event called when user clicks the login to google button */
 		login: function() {
 			var params = {
 				'clientid': '263911259079-7tcjorsuo6gh57fvf75d7v5rsd9436js.apps.googleusercontent.com',
