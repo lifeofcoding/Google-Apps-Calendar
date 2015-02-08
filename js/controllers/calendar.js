@@ -82,7 +82,7 @@
 				dataPicker.datetimepicker({format:'MM/DD/YYYY'});
 
 				dataPicker.find('input').on('click', function(){
-					$(this).parents('div').children('.input-group-addon').click();
+					$(this).siblings('.input-group-addon').click();
 				});
 
 				var modalForm = $(this);
