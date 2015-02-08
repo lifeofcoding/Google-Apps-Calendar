@@ -64,7 +64,7 @@
 				defaultDate: moment().format('YYYY-MM-DD'),
 				editable: true,
 				eventLimit: true, // allow "more" link when too many events
-				events: events,
+				events: events || [],
 				eventClick: function(calEvent, jsEvent, view) {
 					var model = App.Model.Events.findWhere({id:calEvent.modelId});
 					App.vent.trigger('show:eventInfo', model);
