@@ -4,7 +4,7 @@ if(isset($_GET['debug'])){
 }else{
 	error_reporting(0);
 }
-$cacheNumber = rand(1000,99999999); //to prevent caching during development
+
 include('includes/config.php');
 include('includes/bootstrap.php');
 ?>
