@@ -25,14 +25,16 @@
 		},
 
 		showModal: function(element, model){
-			var _this = this;
+			var _this = this,
+			    templateFunc = _.template($('#form-tpl').html()),
+			    modelTemplate, modalForm;
 			element.modal('show').one('shown.bs.modal', function (e) {
-				var modelTemplate = model ? _.template($('#form-tpl').html())(model) : _.template($('#form-tpl').html())();
+				modelTemplate = model ? templateFunc(model) : templateFunc();
 				$(this).find('.modal-body').html(modelTemplate);
 				
 				_this.initializeDatePickers();
 
-				var modalForm = $(this);
+				modalForm = $(this);
 				modalForm.find('.submit').on('click', function(e){
 					var params = modalForm.find('form').serializeArray(),
 					    newEvent = {}, hasEmptyValue = 0;
@@ -56,6 +58,7 @@
 				});
 				element.one('hide.bs.modal', function (e) {
 					_this.unbindDatePickers();
+					$(this).find('.modal-body').empty();
 					modalForm.find('.submit').unbind('click');
 				});
 			});

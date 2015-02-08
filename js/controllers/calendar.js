@@ -115,12 +115,10 @@
 					"summary": params.title,
 					"location": params.location,
 					"start": {
-					        "dateTime": moment(params.start).format('YYYY-MM-DDTHH:MM:SS.SSSZ'),
-					        //"timeZone": timeZone
+					        "dateTime": moment(params.start).format()
 					},
 					"end": {
-					        "dateTime": moment(params.end).format('YYYY-MM-DDTHH:MM:SS.SSSZ'),
-					        //"timeZone": timeZone
+					        "dateTime": moment(params.end).format()
 					},
 					"visibility": 'default'
 				};
@@ -154,12 +152,10 @@
 					"summary": params.title,
 					"location": params.location,
 					"start": {
-					        "dateTime": moment(params.start).format('YYYY-MM-DDTHH:MM:SS.SSSZ'),
-					        //"timeZone": timeZone
+					        "dateTime": moment(params.start).format()
 					},
 					"end": {
-					        "dateTime": moment(params.end).format('YYYY-MM-DDTHH:MM:SS.SSSZ'),
-					        //"timeZone": timeZone
+					        "dateTime": moment(params.end).format()
 					},
 					"visibility": 'default'
 				};
@@ -192,7 +188,6 @@
 				console.warn('Tried processing a google request but request variable is not valid!');
 			}else{
 				request.execute(function(resp) {
-					console.log(resp);
 					if(resp.error){
 						App.vent.trigger('error', resp.error.message);
 					}else{
