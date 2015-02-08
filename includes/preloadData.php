@@ -1,4 +1,5 @@
 <?php
+	include('config.php');
 	header('Content-type: text/javascript');
 
 	/* Our Event class setting up our public variables for our $event object to use */
@@ -38,3 +39,4 @@
 	$initialData = json_encode($events); //print it as json string for out javascript to use
 ?>
 window.preloadData = JSON.parse('<?=$initialData?>');
+window.clientid = '<?=$website_config['clientid']?>';

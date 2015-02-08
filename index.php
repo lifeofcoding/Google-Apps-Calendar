@@ -4,7 +4,7 @@ if(isset($_GET['debug'])){
 }else{
 	error_reporting(0);
 }
-$cacheNumber = rand(1000,99999999);
+$cacheNumber = rand(1000,99999999); //to prevent caching during development
 include('includes/config.php');
 include('includes/bootstrap.php');
 ?>
@@ -12,7 +12,7 @@ include('includes/bootstrap.php');
 <html lang="en">
   <head>
 	<meta charset="UTF-8">
-	<title>Mobiquity Calendar Example</title>
+	<title><?=$website_config['title']?></title>
 	<link rel="stylesheet" type="text/css" href="/css/fonts.css">
 	<link rel="stylesheet" type="text/css" href="/css/app.css">
 	<link rel="stylesheet" type="text/css" href="/css/fullcalendar.css">
