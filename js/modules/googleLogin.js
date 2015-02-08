@@ -41,6 +41,7 @@
 		loginCallback: function(result) {
 			if(result.error){
 				console.error('Google Reponse:' + result.error);
+				App.vent.trigger('error', result.error);
 			}else{
 				try {
 					gapi.client.load('calendar', 'v3',function(){
